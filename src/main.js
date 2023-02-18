@@ -1,8 +1,23 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from "vue";
+import App from "./App.vue";
+import vuetify from "./plugins/vuetify";
+import "vuetify/dist/vuetify";
+import Router from "vue-router";
+import routes from "./router/index";
+import pinia from "@/plugins/pinia";
 
-Vue.config.productionTip = false
+Vue.use(pinia);
+
+Vue.use(Router);
+const router = new Router({
+  routes,
+});
+
+Vue.config.productionTip = false;
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  pinia,
+  vuetify,
+  render: (h) => h(App),
+  router: router,
+}).$mount("#app");
