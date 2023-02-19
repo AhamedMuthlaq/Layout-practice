@@ -18,6 +18,10 @@
     </v-sheet>
 </template>
 <script>
+import { userRoleStore } from '@/store/userRole.js'
+
+const store = userRoleStore()
+
 export default {
     data: () => ({
         form: false,
@@ -35,6 +39,12 @@ export default {
             setTimeout(() => (this.loading = false), 2000)
 
             this.$router.push({ name: 'Home' })
+
+            if (this.email === store.adminEmail) {
+                store.setRole("admin")
+            } else {
+                store.setRole("user")
+            }
         },
         required(v) {
             return !!v || 'Field is required'

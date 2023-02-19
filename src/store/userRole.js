@@ -1,10 +1,12 @@
 import { defineStore } from "pinia";
 
 export const userRoleStore = defineStore("userRoleStore", {
-  state: () => ({
-    role: null,
-    adminEmail: "admin@gmail.com",
-  }),
+  state: () => {
+    return {
+      role: null,
+      adminEmail: "admin@gmail.com",
+    };
+  },
   getters: {
     role() {
       return this.role;

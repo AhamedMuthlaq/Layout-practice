@@ -12,15 +12,24 @@
 </template>
 <script>
 import Navbar from "../components/Navbar.vue"
+
+
+
+
+
 export default {
     name: "Profile",
     methods: {
         goToHome() {
             this.$router.push({ name: "Home" });
+        },
+        isAdmin() {
+            return store.$state.role == "admin"
         }
     },
+
     components: {
-        Navbar
+        Navbar,
     }
 }
 </script>

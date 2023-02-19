@@ -19,6 +19,9 @@ export default {
             this.$router.push('/profile')
         }
     },
+    mounted() {
+
+    }
 }
 </script>
 <style scoped>

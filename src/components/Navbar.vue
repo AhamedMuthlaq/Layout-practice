@@ -6,7 +6,7 @@
             </v-icon>
         </v-avatar>
         <v-toolbar-title class="title">User Name</v-toolbar-title>
-        <router-link to="/login">Logout</router-link>
+        <v-btn @click="logout">Logout</v-btn>
         <v-btn @click="goToHome">
             <v-icon>mdi-home</v-icon>
         </v-btn>
@@ -18,6 +18,9 @@ export default {
     methods: {
         goToHome() {
             this.$router.push('/');
+        },
+        logout() {
+            this.$router.push('/login')
         }
     }
 }
