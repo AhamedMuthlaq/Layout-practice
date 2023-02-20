@@ -8,10 +8,10 @@ export const userRoleStore = defineStore("userRoleStore", {
     };
   },
   getters: {
-    role() {
+    getRole() {
       return this.role;
     },
-    adminEmail() {
+    getAdminEmail() {
       return this.adminEmail;
     },
     isAdmin() {

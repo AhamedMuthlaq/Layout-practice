@@ -1,6 +1,11 @@
+import Router from "vue-router";
 import UserLayout from "../layouts/UserLayout.vue";
 import AdminLayout from "../layouts/AdminLayout.vue";
 import DefaultLayout from "../layouts/DefaultLayout.vue";
+import Vue from "Vue";
+
+Vue.use(Router);
+
 const routes = [
   {
     path: "/",
@@ -18,7 +23,7 @@ const routes = [
     path: "/profile",
     name: "Profile",
     component: () => import("../views/Profile.vue"),
-    meta: { layout: UserLayout },
+    meta: { layout: UserLayout, requiresAuth: true },
   },
   {
     path: "/admin",
@@ -27,4 +32,9 @@ const routes = [
     meta: { layout: AdminLayout },
   },
 ];
-export default routes;
+
+const router = new Router({
+  routes: routes,
+});
+
+export default router;

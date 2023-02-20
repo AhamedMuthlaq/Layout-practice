@@ -2,17 +2,12 @@ import Vue from "vue";
 import App from "./App.vue";
 import vuetify from "./plugins/vuetify";
 import "vuetify/dist/vuetify";
-import Router from "vue-router";
-import routes from "./router/index";
+import router from "./router";
 import pinia from "@/plugins/pinia";
+import DefaultLayout from "@/layouts/DefaultLayout.vue";
 
 Vue.use(pinia);
-
-Vue.use(Router);
-const router = new Router({
-  routes,
-});
-
+Vue.component("DefaultLayout", DefaultLayout);
 Vue.config.productionTip = false;
 
 new Vue({

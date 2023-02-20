@@ -40,7 +40,7 @@ export default {
 
             this.$router.push({ name: 'Home' })
 
-            if (this.email === store.adminEmail) {
+            if (this.email === store.getAdminEmail) {
                 store.setRole("admin")
             } else {
                 store.setRole("user")
